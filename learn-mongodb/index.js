@@ -32,11 +32,21 @@ async function createCourse() {
 async function getCourses() {
     const courses = await Course
         .find()
-        .limit(10)
-        .select({name:1, tags:1})
-        .sort({'name' : -1});
+        // .or([{author : 'Azzam'},{isPublished : true}])
+        // .limit(10)
+        // .select({name:1, tags:1})
+        // .sort({'name' : -1});
     console.log(courses);
-    
 }
+
+// MongoDB query operators
+// eq (equal)
+// ne (not equal)
+// gt
+// gte
+// lt
+// lte
+// in
+// nin
 
 getCourses();
